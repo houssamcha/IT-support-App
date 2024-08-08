@@ -18,5 +18,9 @@ public class Panne {
     @ManyToOne
     @JoinColumn(name = "equipement_id")
     private Equipement equipement;
+
+    @ManyToOne
+    @JoinColumn(name = "ticket_id")
+    private Ticket ticket;
     
 }
