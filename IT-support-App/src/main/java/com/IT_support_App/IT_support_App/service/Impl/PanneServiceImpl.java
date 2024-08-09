@@ -23,7 +23,7 @@ public class PanneServiceImpl implements PanneService {
     @Override
     public Panne getPanneById(Long id) {
         Optional<Panne> optionalPanne = panneRepository.findById(id);
-        return optionalPanne.orElse(null); // Ou lancer une exception si souhaité
+        return optionalPanne.orElse(null);
     }
 
     @Override
