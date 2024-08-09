@@ -20,6 +20,7 @@ public class EquipementServiceImpl implements EquipementService {
 
     @Override
     public Equipement saveEquipement(Equipement equipement) {
+
         return equipementRepository.save(equipement);
     }
 

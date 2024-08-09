@@ -4,8 +4,12 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
 
+
+import java.util.List;
+
+@Getter
+@Setter
 @Entity
 public class Panne {
     @Id
@@ -13,14 +17,7 @@ public class Panne {
     private Long panneId;
     private String description;
 
-    @Getter
-    @Setter
-    @ManyToOne
-    @JoinColumn(name = "equipement_id")
-    private Equipement equipement;
-
-    @ManyToOne
-    @JoinColumn(name = "ticket_id")
-    private Ticket ticket;
+    @OneToMany(mappedBy  = "panne")
+    private List<Ticket> tickets;
     
 }

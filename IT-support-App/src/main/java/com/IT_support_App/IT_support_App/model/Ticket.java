@@ -29,8 +29,9 @@ public class Ticket {
     @JoinColumn(name = "technicien_id")
     private Technicien technicien;
 
-    @OneToMany(mappedBy = "ticket")
-    private List<Panne> pannes;
+    @ManyToOne
+    @JoinColumn(name = "panne_id")
+    private Panne panne;
 
     @ManyToOne
     @JoinColumn(name = "equipement_id")
