@@ -7,11 +7,11 @@ import lombok.Setter;
 
 import java.util.List;
 
-
+@Getter
+@Setter
 @Entity
 public class Equipement {
-    @Getter
-    @Setter
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long equipementId;
