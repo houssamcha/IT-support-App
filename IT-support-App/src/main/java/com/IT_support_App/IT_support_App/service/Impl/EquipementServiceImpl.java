@@ -26,7 +26,7 @@ public class EquipementServiceImpl implements EquipementService {
     @Override
     public Equipement getEquipementById(Long id) {
         Optional<Equipement> equipement = equipementRepository.findById(id);
-        return equipement.orElse(null); // or throw an exception if preferred
+        return equipement.orElse(null);
     }
 
     @Override

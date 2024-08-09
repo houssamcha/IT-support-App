@@ -6,4 +6,3 @@ public enum EtatEquipement {
     EN_REPARATION,
     HORS_SERVICE
 }
-

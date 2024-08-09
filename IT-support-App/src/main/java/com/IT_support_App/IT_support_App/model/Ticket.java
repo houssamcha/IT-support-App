@@ -32,5 +32,8 @@ public class Ticket {
     @OneToMany(mappedBy = "ticket")
     private List<Panne> pannes;
 
+    @ManyToOne
+    @JoinColumn(name = "equipement_id")
+    private Equipement equipement;
 }
 
