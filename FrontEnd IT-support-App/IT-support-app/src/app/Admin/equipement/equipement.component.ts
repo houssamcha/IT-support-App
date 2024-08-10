@@ -15,7 +15,6 @@ export class EquipementComponent implements OnInit {
 
   ngOnInit(): void {
     this.getEquipements();
-    
   }
   getEquipements() : void {
     this.equipementService.getEquipements().subscribe(data => {
