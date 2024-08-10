@@ -1,18 +1,24 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EquipementComponent } from './Admin/equipement/equipement.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PanneComponent } from './Admin/panne/panne.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EquipementComponent
+    EquipementComponent,
+    PanneComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

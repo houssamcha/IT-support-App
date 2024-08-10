@@ -1,1 +1,18 @@
-<p>equipement works!</p>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Identifiant de l'équipement</th>
+      <th>Nom</th>
+      <th>Type</th>
+      <th>État</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let equipement of equipements">
+      <td>{{ equipement.equipementId }}</td>
+      <td>{{ equipement.nom }}</td>
+      <td>{{ equipement.type }}</td>
+      <td>{{ equipement.etat }}</td>
+    </tr>
+  </tbody>
+</table>
