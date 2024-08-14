@@ -1,1 +1,15 @@
-<p>panne works!</p>
+<table border="1">
+    <thead>
+        <link rel="stylesheet" href="panne.component.css">
+        <tr>
+            <th>Identifiant de panne</th>
+            <th>description</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let panne of panne">
+        <tr>
+            <td>{{panne.type}}</td>
+            <td>{{panne.description}}</td>
+        </tr>
+    </tbody>
+</table>
