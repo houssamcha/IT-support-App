@@ -24,6 +24,17 @@ export class EquipementComponent implements OnInit {
     })
   }
   
- 
+  onSubmit(): void {
+    this.equipementService.ajouterEquipement(this.newEquipement).subscribe(
+      (response) => {
+        console.log('Équipement ajouté avec succès !', response);
+        this.equipements.push(response);
+        this.newEquipement = new Equipement();
+      },
+      (error) => {
+        console.error('Erreur lors de l\'ajout de l\'équipement', error);
+      }
+    );
+  }
 
 }
