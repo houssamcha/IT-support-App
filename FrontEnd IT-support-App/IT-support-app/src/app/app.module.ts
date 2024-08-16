@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { EquipementComponent } from './Admin/equipement/equipement.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PanneComponent } from './Admin/panne/panne.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,8 +18,8 @@ import { PanneComponent } from './Admin/panne/panne.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

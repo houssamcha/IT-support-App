@@ -10,15 +10,20 @@ import { EquipementService } from 'src/app/service/equipement.service';
 export class EquipementComponent implements OnInit {
 
   equipements : Equipement[] =  [];
+  newEquipement: Equipement = new Equipement();
   constructor(private equipementService : EquipementService) {}
   
 
   ngOnInit(): void {
     this.getEquipements();
+    console.log(this.newEquipement);
   }
   getEquipements() : void {
     this.equipementService.getEquipements().subscribe(data => {
       this.equipements = data ;
     })
   }
+  
+ 
+
 }
