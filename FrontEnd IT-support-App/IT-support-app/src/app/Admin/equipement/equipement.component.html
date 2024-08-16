@@ -1,4 +1,19 @@
-
+<h2>Ajouter un Nouvel Équipement</h2>
+<form (ngSubmit)="onSubmit()" #equipementForm="ngForm">
+  <div>
+    <label for="nom">Nom:</label>
+    <input type="text" id="nom" required [(ngModel)]="newEquipement.nom" name="nom">
+  </div>
+  <div>
+    <label for="type">Type:</label>
+    <input type="text" id="type" required [(ngModel)]="newEquipement.type" name="type">
+  </div>
+  <div>
+    <label for="etat">État:</label>
+    <input type="text" id="etat" required [(ngModel)]="newEquipement.etat" name="etat">
+  </div>
+  <button type="submit" >Ajouter Équipement</button>
+</form>
 <table border="1">
   <thead>
     <link rel="stylesheet" href="equipement.component.css">
