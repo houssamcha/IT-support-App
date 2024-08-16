@@ -1,35 +1,47 @@
-<h2>Ajouter un Nouvel Équipement</h2>
-<form (ngSubmit)="onSubmit()" #equipementForm="ngForm">
-  <div>
-    <label for="nom">Nom:</label>
-    <input type="text" id="nom" required [(ngModel)]="newEquipement.nom" name="nom">
+<div class="container mt-5">
+  <h2 class="mb-4 text-primary">Ajouter un Nouvel Équipement</h2>
+  
+  <form (ngSubmit)="onSubmit()" #equipementForm="ngForm" class="mb-5">
+    <div class="mb-3">
+      <label for="nom" class="form-label">Nom:</label>
+      <input type="text" class="form-control" id="nom" required [(ngModel)]="newEquipement.nom" name="nom" placeholder="Entrez le nom">
+    </div>
+    <div class="mb-3">
+      <label for="type" class="form-label">Type:</label>
+      <input type="text" class="form-control" id="type" required [(ngModel)]="newEquipement.type" name="type" placeholder="Entrez le type">
+    </div>
+    <div class="mb-3">
+      <label for="etat" class="form-label">État:</label>
+      <input type="text" class="form-control" id="etat" required [(ngModel)]="newEquipement.etat" name="etat" placeholder="Entrez l'état">
+    </div>
+    <button type="submit" class="btn btn-primary">Ajouter Équipement</button>
+  </form>
+
+  <h3 class="mb-3 text-primary">Liste des Équipements</h3>
+  <div class="table-responsive">
+    <table class="table table-striped table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Nom</th>
+          <th>Type</th>
+          <th>État</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let equipement of equipements">
+          <td>{{ equipement.equipementId }}</td>
+          <td>{{ equipement.nom }}</td>
+          <td>{{ equipement.type }}</td>
+          <td>
+            <span class="badge" [ngClass]="{
+              'bg-success': equipement.etat === 'Bon état',
+              'bg-warning': equipement.etat === 'Nécessite entretien',
+              'bg-danger': equipement.etat === 'Hors service'
+            }">{{ equipement.etat }}</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  <div>
-    <label for="type">Type:</label>
-    <input type="text" id="type" required [(ngModel)]="newEquipement.type" name="type">
-  </div>
-  <div>
-    <label for="etat">État:</label>
-    <input type="text" id="etat" required [(ngModel)]="newEquipement.etat" name="etat">
-  </div>
-  <button type="submit" >Ajouter Équipement</button>
-</form>
-<table border="1">
-  <thead>
-    <link rel="stylesheet" href="equipement.component.css">
-    <tr>
-      <th>Identifiant de l'équipement</th>
-      <th>Nom</th>
-      <th>Type</th>
-      <th>État</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let equipement of equipements">
-      <td>{{ equipement.equipementId }}</td>
-      <td>{{ equipement.nom }}</td>
-      <td>{{ equipement.type }}</td>
-      <td>{{ equipement.etat }}</td>
-    </tr>
-  </tbody>
-</table>
+</div>

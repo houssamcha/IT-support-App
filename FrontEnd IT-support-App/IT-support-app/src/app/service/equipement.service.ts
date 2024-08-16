@@ -17,5 +17,7 @@ export class EquipementService {
   ajouterEquipement(equipement: Equipement): Observable<Equipement> {
     return this.httpCLient.post<Equipement>(`${this.BaseUrl}/add`, equipement);
   }
-  
+  supprimerEquipement(id: number): Observable<void> {
+    return this.httpCLient.delete<void>(`${this.BaseUrl}/${id}`);
+  }
 }
