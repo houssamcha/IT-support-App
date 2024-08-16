@@ -36,5 +36,13 @@ export class EquipementComponent implements OnInit {
       }
     );
   }
+  onDelete(id: number): void {
+    this.equipementService.supprimerEquipement(id).subscribe(() => {
+      this.equipements = this.equipements.filter(e => e.equipementId !== id);
+      console.log(`Équipement avec l'id ${id} supprimé.`);
+    }, error => {
+      console.error('Erreur lors de la suppression de l\'équipement', error);
+    });
+  }
 
 }
